@@ -116,7 +116,7 @@ export const useSignInForm = () => {
     
             await dispatch(refreshUser(parseInt(foundUser.id as string) as number))
     
-            navigate("/admin", { replace: true });
+            navigate("/waitroom/admin", { replace: true });
         } catch (e) {
             console.log(e)
         }

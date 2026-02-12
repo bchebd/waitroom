@@ -24,7 +24,7 @@ export const useHeader = () => {
     const handleLogout = () => {
         dispatch(logout());
 
-        navigate("/signin", { replace: true })
+        navigate("/waitroom/signin", { replace: true })
     };
 
     const handleRefresh = useCallback(() => {

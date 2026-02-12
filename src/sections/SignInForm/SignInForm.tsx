@@ -52,7 +52,7 @@ export const SignInForm: FC = () => {
             </form>
             <div className={cn("navigation")}>
                 <p>Hast du noch kein Konto?</p>
-                <NavLink to="/signup">
+                <NavLink to="/waitroom/signup">
                     Registrierung
                 </NavLink>
             </div>

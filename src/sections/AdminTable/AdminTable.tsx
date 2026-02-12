@@ -4,9 +4,9 @@ import { Loader } from "@/components/Loader/Loader";
 import { ModalPortal } from "@/components/ModalPortal/ModalPortal";
 import { getErrorMessage } from "@/hooks/useGetErrorMessage";
 import { useAdminTable } from "@/sections/AdminTable/AdminTable.hooks";
+import { Button } from "@/ui/Button/Button";
 
 import styles from "@/sections/AdminTable/AdminTable.module.scss";
-import { Button } from "@/ui/Button/Button";
 
 const cn = classNames.bind(styles);
 

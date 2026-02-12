@@ -27,8 +27,8 @@ const NotFound: FC = () => {
                 </p>
 
                 <Button
-                className={cn("notfound-page__button")}
-                onClick={() => navigate("/")}
+                    className={cn("notfound-page__button")}
+                    onClick={() => navigate("/waitroom/")}
                 >
                     Zur Startseite
                 </Button>

@@ -10,9 +10,9 @@ interface PrivateRouteProps {
 export const PrivateRoute: FC<PrivateRouteProps> = ({ children }) => {
     const user = useAppSelector(authSelector);
 
-    if (!user.id) return <Navigate to="/signin" replace />;
+    if (!user.id) return <Navigate to="/waitroom/signin" replace />;
 
-    if (user.admin) return <Navigate to="/admin" replace />;
+    if (user.admin) return <Navigate to="/waitroom/admin" replace />;
 
     return <>{children}</>;
 };

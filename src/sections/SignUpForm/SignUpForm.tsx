@@ -54,7 +54,7 @@ export const SignUpForm: FC = () => {
             </form>
             <div className={cn("navigation")}>
                 <p>Hast du bereits ein Konto?</p>
-                <NavLink to="/signin">
+                <NavLink to="/waitroom/signin">
                     Anmelden
                 </NavLink>
             </div>

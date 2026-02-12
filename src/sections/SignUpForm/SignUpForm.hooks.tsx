@@ -125,7 +125,7 @@ export const useSignUpForm = () => {
 
         setFormState(initialFormState);
 
-        navigate("/", { replace: true });
+        navigate("/waitroom/", { replace: true });
     };
 
     useEffect(() => {
