@@ -32,7 +32,7 @@ export const Header: FC = () => {
 
     return (
         <header className={cn("header")}>
-            <div className={cn("container")}>
+            <div className={cn("container", isOpen && "h-open")}>
                 <div className={cn("left")}>
                     <Avatar name={name} round size="44" title={name} textSizeRatio={2} />
                     <div className={cn("userText")}>
@@ -58,7 +58,7 @@ export const Header: FC = () => {
                         isOpen={isOpen}
                     />
                 </div>
-                <div className={cn("ghost__wrapper")}></div>
+                <div className={cn("ghost__wrapper", isOpen && "h-open")}></div>
                 <DropDown isOpen={isOpen} closeMenu={setIsOpen} btnRef={btnRef}>
                     <Switcher />
                     <AccentSelect 

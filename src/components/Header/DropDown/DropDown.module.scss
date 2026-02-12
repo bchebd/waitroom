@@ -21,18 +21,16 @@
 
     width: fit-content;
 
-    @include glass();
+    @include glass($blur: 64px, $bg: var(--grey-glass));
 
     padding: 12px;
-    padding-top: 0px;
 
     &.open {
         opacity: 1;
         pointer-events: all;
-        transform: translateY(50px);
+        transform: translateY(72px);
 
         border-top-right-radius: 0;
-
-        padding-top: 32px;
+        border-top-left-radius: 0;
     }
 }
