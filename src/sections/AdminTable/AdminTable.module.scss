@@ -1,0 +1,131 @@
+@use '@/styles/colors' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/variables' as *;
+@use "@/ui/Button/buttons" as *;
+
+.admin-table {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+
+    h1 {
+        @include heading(lg);
+
+        color: var(--text);
+
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        margin-bottom: 24px;
+
+        & span {
+            @include paragraph();
+            
+            background: var(--accent); 
+            padding: 4px 12px;
+            border-radius: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px var(--shadow);
+            transition: $transition;
+
+            color: var(--bg);
+
+            &:hover {
+                background: var(--accent-hover); 
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    thead {
+        background: rgba(255, 255, 255, 0.1);
+        text-align: left;
+
+        th {
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+    }
+
+    tbody {
+        tr {
+            transition: background 0.2s;
+
+            &:hover {
+                background: var(--shadow);
+            }
+
+            &:first-child {
+                background: var(--box-shadow-color); // andere bg Farbe für aktuelles Ticket
+            }
+
+            td {
+                padding: 12px 16px;
+                font-size: 16px;
+                color: var(--text);
+
+                button {
+                margin: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.row__button {
+  @include button-red($buttonSize: s);
+  
+}
+
+.notfound {
+    display: block !important;
+
+    width: fit-content;
+
+    margin: 0 auto !important;
+    margin-top: 16px !important;
+}
+
+.modal__container {
+
+    &__header {
+        @include heading(lg);
+
+        text-align: center;
+
+        padding-top: 16px
+    }
+
+    &__body {
+        @include paragraph();
+
+        text-align: center;
+        color: var(--text-soft);
+
+        margin-bottom: 20px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+}

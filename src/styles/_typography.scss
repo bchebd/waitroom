@@ -1,0 +1,73 @@
+/* Headings (H1–H6 / XL → SM) */
+@mixin heading($size: md) {
+  @if $size == xl {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+  } @else if $size == lg {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+  } @else if $size == md {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+  } @else if $size == sm {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  } @else if $size == xs {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
+
+/* Paragraph text */
+@mixin paragraph($size: base) {
+  @if $size == base {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  } @else if $size == sm {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  } @else if $size == xs {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  letter-spacing: 0; /* default for body */
+}
+
+/* UI text (buttons, labels, inputs) */
+@mixin uiText($size: md, $weight: 500) {
+  @if $size == lg {
+    font-size: 18px;
+  } @else if $size == md {
+    font-size: 16px;
+  } @else if $size == sm {
+    font-size: 14px;
+  } @else if $size == xs {
+    font-size: 12px;
+  }
+  font-weight: $weight;
+  letter-spacing: -0.02em;
+}
+
+/* Small helper text (like captions) */
+@mixin caption($size: sm) {
+  @if $size == sm {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  } @else if $size == xs {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+  letter-spacing: 0;
+}

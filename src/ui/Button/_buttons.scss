@@ -1,0 +1,166 @@
+@use '@/styles/colors' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/variables' as *;
+
+@mixin button-basic-styles() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 600;
+
+    border-radius: $b-radius;
+
+    transition: $transition;
+
+    cursor: pointer;
+};
+
+
+@mixin button-primary(
+    $buttonSize: m,
+    $width: 100%,
+    $textColor: white,
+    $isTransparent: false,
+    $isDisabled: false, 
+) {
+    @include button-basic-styles();
+    
+    background-color: var(--accent);
+    
+    color: $textColor;
+    
+    max-width: $width;
+    width: 100%;
+
+    &:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        background-color: var(--accent-active);
+        transform: translateY(0px) scale(0.985);
+    }
+    
+    &:disabled {
+        background-color: var(--box-shadow-color);
+
+        cursor: not-allowed;
+    }
+    
+    @if $buttonSize == "l" {
+        @include uiText(lg);
+
+        padding: 12px 24px;
+    }
+
+    @if $buttonSize == "m" {
+        @include uiText();
+        
+        padding: 8px 12px;
+    }
+
+    @if $buttonSize == "s" {
+        @include uiText(sm);
+        padding: 4px 8px;
+    }
+}
+
+@mixin button-secondary(
+    $buttonSize: m,
+    $width: 100%,
+    $textColor: var(--text),
+    $isTransparent: false,
+    $isDisabled: false
+) {
+    @include button-basic-styles();
+
+    background-color: var(--glass-bg);
+    border: 1px solid var(--border);
+    color: $textColor;
+
+    max-width: $width;
+    width: 100%;
+
+    &:hover {
+        background-color: var(--glass-hover);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        background-color: var(--glass-active);
+        transform: translateY(0px) scale(0.985);
+    }
+
+    &:disabled {
+        background-color: var(--box-shadow-color);
+        cursor: not-allowed;
+    }
+
+    @if $buttonSize == "l" {
+        @include uiText(lg);
+        padding: 12px 24px;
+    }
+
+    @if $buttonSize == "m" {
+        @include uiText();
+        padding: 8px 12px;
+    }
+
+    @if $buttonSize == "s" {
+        @include uiText(sm);
+        padding: 4px 8px;
+    }
+}
+
+@mixin button-red(
+    $buttonSize: m,
+    $width: 100%,
+    $textColor: var(--bg),
+    $isTransparent: false,
+    $isDisabled: false, 
+) {
+    @include button-basic-styles();
+    
+    background-color: $danger;
+    
+    color: $textColor;
+    
+    max-width: $width;
+    width: 100%;
+
+    &:hover {
+        background-color: $danger-hover;
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        background-color: $danger-active;
+        transform: translateY(0px) scale(0.985);
+    }
+    
+    &:disabled {
+        background-color: $danger-shadow;
+
+        cursor: not-allowed;
+    }
+    
+    @if $buttonSize == "l" {
+        @include uiText(lg);
+
+        padding: 12px 24px;
+    }
+
+    @if $buttonSize == "m" {
+        @include uiText();
+        
+        padding: 8px 12px;
+    }
+
+    @if $buttonSize == "s" {
+        @include uiText(sm);
+        padding: 4px 8px;
+    }
+}

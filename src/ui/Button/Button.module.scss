@@ -1,0 +1,9 @@
+@use "@/ui/Button/buttons" as *;
+
+.primary {
+    @include button-primary();
+}
+
+.secondary {
+    @include button-secondary();
+}

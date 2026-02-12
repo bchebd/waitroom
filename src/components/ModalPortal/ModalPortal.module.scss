@@ -1,0 +1,52 @@
+@use '@/styles/colors' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/variables' as *;
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.25); 
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.modal__container {
+    width: 90%;
+    max-width: 400px; 
+    
+    @include glass();
+
+    padding: 12px 16px;
+
+    transform: translateY(50px);
+    opacity: 0;
+    transition: $transition;
+
+    color: var(--text);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .modal.open & {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,49 @@
+@use '@/styles/colors' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/variables' as *;
+
+.close {
+  width: 20px;
+  height: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+
+  &:hover span {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+
+  &:active span {
+    background-color: var(--accent-active);
+    transform: translateY(0);
+  
+    filter: drop-shadow(0 2px 5px var(--accent-active));
+  }
+
+  &.open {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+}
+
+.close span {
+  display: block;
+  width: 20px;
+  height: 2px;
+
+  background-color: var(--accent);
+
+  transition: $transition;
+}

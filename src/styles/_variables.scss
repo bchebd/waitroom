@@ -1,0 +1,20 @@
+$transition: 0.225s ease-in-out;
+
+$b-radius: 12px;
+
+@mixin glass(
+    $bg: var(--glass-bg), 
+    $border: var(--border), 
+    $radius: $b-radius,
+    $shadow: var(--shadow), 
+    $blur: 18px, 
+    $transition: 0.3s ease
+) {
+  background-color: $bg;
+  border: 1px solid $border;
+  box-shadow: 0 12px 35px $shadow;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border-radius: $radius;
+  transition: $transition;
+}

@@ -1,0 +1,33 @@
+@use '@/styles/colors' as *;
+@use '@/styles/variables' as *;
+@use '@/styles/typography' as *;
+
+.container {
+    max-width: 520px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 120px 16px;
+
+    > div:first-of-type {
+        @include glass();
+
+        padding: 24px 16px;
+
+        & h1 {
+            @include heading(xl);
+
+            text-align: center;
+            color: var(--text);
+
+            margin-bottom: 32px;
+        }
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
+    
+}

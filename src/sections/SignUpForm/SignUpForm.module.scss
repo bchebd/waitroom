@@ -1,0 +1,40 @@
+@use '@/styles/colors' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/variables' as *;
+@use "@/ui/Button/buttons" as *;
+
+.btn {
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    @include uiText(sm);
+
+    color: var(--text-soft);
+
+    & a {
+        color: var(--accent);
+
+        transition: $transition;
+
+        &:hover {
+            color: var(--accent-hover);
+            text-shadow: 0px 4px 8px var(--accent-hover);
+
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            color: var(--accent-active);
+            text-shadow: 0px 4px 8px var(--accent-active);
+
+            transform: translateY(0px) scale(0.985);
+        }
+    }
+}

@@ -1,0 +1,115 @@
+:root, :root[data-theme="light"] {
+  --bg: #F2F2F7;
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-hover: rgba(255, 255, 255, 0.8);
+  --glass-active: rgba(255, 255, 255, 0.95);
+
+  --border: rgba(0, 0, 0, 0.1);
+
+  --shadow: rgba(0, 0, 0, 0.12);
+
+  --text: rgba(0, 0, 0, 0.92);
+  --text-muted: rgba(0, 0, 0, 0.45);
+  --text-soft: rgba(0, 0, 0, 0.65);
+
+  --grey: #8E8E93;
+}
+
+:root[data-theme="dark"] {
+  --bg: #1c1c1e;
+
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-hover: rgba(255, 255, 255, 0.15);
+  --glass-active: rgba(255, 255, 255, 0.25);
+
+  --border: rgba(255, 255, 255, 0.3);
+
+  --shadow: rgba(0, 0, 0, 0.25);
+
+  --text: rgba(255, 255, 255, 0.92);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-soft: rgba(255, 255, 255, 0.72);
+
+  --grey: #8E8E93;
+}
+
+:root[data-accent="blue"] {
+  --accent: #0A84FF;
+  --accent-hover: #3399FF;
+  --accent-active: #0066CC;
+  --box-shadow-color: rgba(10, 132, 255, 0.137);
+}
+
+:root[data-accent="purple"] {
+  --accent: #BF5AF2;
+  --accent-hover: #D07BFF;
+  --accent-active: #9F3AD6;
+  --box-shadow-color: rgba(214, 10, 255, 0.15);
+}
+
+/* Pink */
+:root[data-accent="pink"] {
+  --accent: #FF2D55;
+  --accent-hover: #FF5C7D;
+  --accent-active: #E6003E;
+  --box-shadow-color: rgba(255, 45, 85, 0.15);
+}
+
+/* Red */
+:root[data-accent="red"] {
+  --accent: #FF3B30;
+  --accent-hover: #FF695A;
+  --accent-active: #C1271D;
+  --box-shadow-color: rgba(255, 59, 48, 0.15);
+}
+
+/* Orange */
+:root[data-accent="orange"] {
+  --accent: #FF9500;
+  --accent-hover: #FFB347;
+  --accent-active: #CC7A00;
+  --box-shadow-color: rgba(255, 149, 0, 0.14);
+}
+
+/* Yellow */
+:root[data-accent="yellow"] {
+  --accent: #FFD60A;
+  --accent-hover: #FFDF4D;
+  --accent-active: #CCAA00;
+  --box-shadow-color: rgba(255, 214, 10, 0.14);
+}
+
+/* Green */
+:root[data-accent="green"] {
+  --accent: #30D158;
+  --accent-hover: #4BE36F;
+  --accent-active: #22B945;
+  --box-shadow-color: rgba(48, 209, 88, 0.14);
+}
+
+/* Teal */
+:root[data-accent="teal"] {
+  --accent: #5AC8FA;
+  --accent-hover: #7AD5FF;
+  --accent-active: #2196C6;
+  --box-shadow-color: rgba(90, 200, 250, 0.14);
+}
+
+/* Gray */
+:root[data-accent="gray"] {
+  --accent: #8E8E93;
+  --accent-hover: #A9A9AF;
+  --accent-active: #6C6C70;
+  --box-shadow-color: rgba(142, 142, 147, 0.14);
+}
+
+html {
+    scroll-behavior: smooth;    
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--bg);
+    overflow-x: hidden;
+}

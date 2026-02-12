@@ -1,0 +1,114 @@
+@use '@/styles/colors' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/variables' as *;
+
+.select {
+    position: relative;
+    width: 100%;
+    min-width: 100px;
+    max-width: 320px;
+    user-select: none;
+
+  &__picked {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 12px;
+        background: var(--glass-bg);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        transition: $transition;
+
+    &:hover {
+        background: var(--glass-hover);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    & div {
+        background-color: var(--accent);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        flex-shrink: 0;
+    }
+
+    & span {
+        font-weight: 500;
+        color: var(--text);
+        text-transform: capitalize;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: $transition;
+    z-index: 10;
+
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+
+    &::-webkit-scrollbar {
+        width: 6px; 
+        transition: $transition;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--grey);
+        border-radius: 6px;
+    }
+
+    &.is-active {
+      opacity: 1;
+      max-height: 300px;
+      transition: $transition;
+    }
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  min-width: fit-content;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background: var(--glass-hover);
+    transform: translateX(2px);
+  }
+
+  & div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  & span {
+    font-weight: 500;
+    color: var(--text);
+    text-transform: capitalize;
+  }
+}
