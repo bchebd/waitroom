@@ -5,7 +5,7 @@ import { mapRoutes, RouterConfig } from "@/routing/router.config";
 
 export const router = createBrowserRouter([
     {
-        path: 'waitroom',
+        path: '/waitroom',
         element: <App />,
         children: mapRoutes(RouterConfig)
     },
