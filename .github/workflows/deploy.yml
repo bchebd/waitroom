@@ -1,44 +1,29 @@
-name: Deploy to GitHub Pages
+name: Build and deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'src/**'
-      - '.env'
-      - '.env.*'
-      - 'vite.config.*'
-      - 'package.json'
-      - 'tsconfig.json'
+    branches: [main]
+env:
+  VITE_API_URL: ${{secrets.VITE_API_URL}}
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Create .env file with secret
+        run: echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" > .env
+
+      - name: Install, build 🔧
+        run: |
+          npm install
+          npm run build
+          cp ./dist/index.html ./dist/404.html
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          node-version: 22
-
-      - name: Установить зависимости
-        run: npm ci
-
-      - name: Создать .env.production с секретом
-        run: echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" > .env.production
-
-      - name: Проверка секрета
-        run: echo "VITE_API_URL is set"
-        env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          branch: gh-pages
+          folder: dist
