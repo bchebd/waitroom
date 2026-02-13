@@ -65,12 +65,14 @@ export const useAdminTable = () => {
         });
     }, [tags, users, isLoadingD, isLoadingG]);
 
+    const slicedRows = rows.slice(0, 15);
+
     useEffect(() => {
         dispatch(getUsers());
     }, [dispatch, tags]);
 
     return {
-        rows,
+        slicedRows,
         tags,
         isLoadingG,
         isLoadingD,

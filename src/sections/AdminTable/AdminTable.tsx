@@ -12,7 +12,7 @@ const cn = classNames.bind(styles);
 
 export const AdminTable = () => {
     const {
-        rows,
+        slicedRows,
         tags,
         isLoadingG,
         isLoadingD,
@@ -34,9 +34,17 @@ export const AdminTable = () => {
                     {
                         (tags !== undefined && tags?.length > 0) ?
                         (
-                            <h1>
-                                Aktuelle Ticket: <span>{tags !== undefined && tags?.length > 0 ? tags[0].id : ""}</span>
-                            </h1>
+                            <div className={cn("heading__container")}>
+                                <h1>
+                                    Aktuelle Ticket: <span>{tags !== undefined && tags?.length > 0 ? tags[0].id : ""}</span>
+                                </h1>
+                                <p>
+                                    Insgesamt: 
+                                    <span className={cn("length__span")}>
+                                        {tags.length}
+                                    </span>
+                                </p>
+                            </div>
                         ) : 
                         ""
                     }
@@ -51,7 +59,7 @@ export const AdminTable = () => {
                         </thead>
 
                         <tbody>
-                            {rows}
+                            {slicedRows}
                         </tbody>
                     </table>
 

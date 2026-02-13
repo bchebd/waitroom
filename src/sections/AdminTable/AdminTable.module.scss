@@ -18,8 +18,6 @@
         align-items: center;
         gap: 4px;
 
-        margin-bottom: 24px;
-
         & span {
             @include paragraph();
             
@@ -127,5 +125,36 @@
         display: flex;
         justify-content: flex-end;
         gap: 12px;
+    }
+}
+
+.heading__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+
+    &>p {
+        @include paragraph();
+
+        color: var(--text-muted);
+    }
+}
+
+.length__span {
+    display: inline-block;
+
+    color: var(--accent);
+    
+    margin-left: 4px;
+
+    transition: $transition;
+
+    &:hover {
+        color: var(--accent-hover);
+        text-shadow: 0 2px 12px var(--accent-hover);
+        transform: translateY(-2px) scale(1.2);
+        cursor: default;
     }
 }
