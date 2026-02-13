@@ -25,8 +25,6 @@ export const AdminTable = () => {
         errorD
     } = useAdminTable();
   
-    console.log(errorG)
-    console.log(errorD)
     return (
         <>
             <section className={cn("admin-table")}>
