@@ -17,7 +17,7 @@ interface Button extends ButtonHTMLAttributes<HTMLButtonElement>{
 const Button: FC<Button> = ({ children, sType = "primary", type = 'button', onClick, isDisabled = false, className }) => {
   return (
     <button
-      className={`${className ?? ""} ${cn(sType)}`}
+      className={cn(sType, className ?? className)}
       type={type}
       onClick={onClick}
       disabled={isDisabled}
